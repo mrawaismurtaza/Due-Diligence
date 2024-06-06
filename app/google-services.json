@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "475934911713",
+    "firebase_url": "https://pmd-se-a-java-ef1ca-default-rtdb.firebaseio.com",
+    "project_id": "pmd-se-a-java-ef1ca",
+    "storage_bucket": "pmd-se-a-java-ef1ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475934911713:android:e307dcfb46f8b05e2b9ba0",
+        "android_client_info": {
+          "package_name": "com.example.due_diligence"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOXyTowfRCMPgXc7s1K65S8mST8uMd5wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475934911713:android:6b8146a6556c1ab02b9ba0",
+        "android_client_info": {
+          "package_name": "com.example.final_pmd_practice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOXyTowfRCMPgXc7s1K65S8mST8uMd5wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475934911713:android:0bf21e36c7c9ba072b9ba0",
+        "android_client_info": {
+          "package_name": "com.example.pmd_se_a_java"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOXyTowfRCMPgXc7s1K65S8mST8uMd5wo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
