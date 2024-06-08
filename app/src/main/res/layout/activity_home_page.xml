@@ -5,25 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomePage"
-    android:background="#2E4AD5">
+    android:background="#FFEB3B">
+
+
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:id="@+id/cardView"
+        android:layout_width="412dp"
+        android:layout_height="148dp"
+        android:background="#FFEB3B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:background="#1A87E8">
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="62dp"
-            android:layout_height="52dp"
+            android:layout_width="75dp"
+            android:layout_height="87dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/profile_icon" />
 
         <TextView
@@ -31,35 +34,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="160dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="Welcome"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/welcomenametxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="160dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="Ahmed"
             android:textSize="34sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="340dp"
             android:id="@+id/imageView5"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            tools:srcCompat="@drawable/notification_icon" />
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/notification_icon" />
 
         <TextView
             android:id="@+id/notificationtxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="363dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="35dp"
             android:text="1"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
@@ -71,13 +74,40 @@
         android:layout_height="wrap_content"
         android:text="Your Projects"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.211" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/projectrecycler"
+        android:layout_width="407dp"
+        android:layout_height="404dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:textColor="@color/black"
+        android:id="@+id/button4"
+        android:layout_width="272dp"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        android:onClick="Project_Request"
+        android:text="Request For Project +"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

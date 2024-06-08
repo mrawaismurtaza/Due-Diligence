@@ -1,7 +1,7 @@
 package com.example.due_diligence;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +22,7 @@ public class Login extends AppCompatActivity {
         database = new Firebase_Database();
     }
 
+    @SuppressLint("NotConstructor")
     public void Login(View view) {
         String emailtxt = email.getText().toString();
         String passwordtxt = password.getText().toString();
@@ -30,10 +31,19 @@ public class Login extends AppCompatActivity {
             email.setError("Please fill this field");
             password.setError("Please fill this field");
         } else {
-            // check if user exists in firebase
-            database.loginUser(emailtxt, passwordtxt);
-            Intent intent = new Intent(this, HomePage.class);
-            startActivity(intent);
+            database.loginUser(emailtxt, passwordtxt, new Firebase_Database.LoginCallback() {
+                @Override
+                public void onLoginResult(boolean success) {
+                    if (success) {
+                        Intent intent = new Intent(Login.this, HomePage.class);
+                        intent.putExtra("email", emailtxt);
+                        startActivity(intent);
+                    } else {
+                        email.setError("Invalid email or password");
+                        password.setError("Invalid email or password");
+                    }
+                }
+            });
         }
     }
 }

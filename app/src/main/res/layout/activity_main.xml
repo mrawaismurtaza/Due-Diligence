@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFEB3B"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView4"
         android:layout_width="139dp"
         android:layout_height="33dp"
@@ -22,6 +24,7 @@
         tools:ignore="TextSizeCheck" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView8"
         android:layout_width="139dp"
         android:layout_height="33dp"
@@ -36,6 +39,7 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView"
         android:layout_width="167dp"
         android:layout_height="35dp"
@@ -50,12 +54,10 @@
         app:layout_constraintVertical_bias="0.724" />
 
     <Button
-
-
         android:id="@+id/button2"
         android:layout_width="54dp"
         android:layout_height="48dp"
-        android:background="#DA1E1E"
+        android:background="#FBF9F9"
         android:onClick="login"
         android:paddingLeft="-10dp"
         android:paddingRight="-10dp"
@@ -71,10 +73,11 @@
         tools:ignore="SmallSp" />
 
     <Button
+        android:textColor="@color/white"
         android:id="@+id/button"
         android:layout_width="73dp"
         android:layout_height="48dp"
-        android:background="#DA1E1E"
+        android:background="#2196F3"
         android:onClick="signup"
         android:paddingLeft="-10dp"
         android:paddingRight="-10dp"
@@ -89,10 +92,11 @@
         tools:ignore="SmallSp" />
 
     <Button
+        android:textColor="@color/white"
         android:id="@+id/button01"
         android:layout_width="54dp"
         android:layout_height="48dp"
-        android:background="@color/black"
+        android:background="#03A9F4"
         android:onClick="signup"
         android:paddingLeft="-10dp"
         android:paddingRight="-10dp"
@@ -107,6 +111,7 @@
         tools:ignore="SmallSp" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
