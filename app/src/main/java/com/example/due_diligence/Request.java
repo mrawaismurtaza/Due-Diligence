@@ -1,6 +1,8 @@
 package com.example.due_diligence;
 
-public class Request {
+import java.io.Serializable;
+
+public class Request implements Serializable {
     String name;
     String studentEmail;
 

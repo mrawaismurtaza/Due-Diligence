@@ -1,6 +1,8 @@
 package com.example.due_diligence;
 
-public class Notification {
+import java.io.Serializable;
+
+public class Notification implements Serializable {
     String title;
     String message;
     String senderEmail;

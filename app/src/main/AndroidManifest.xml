@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DueDiligence"
         tools:targetApi="31">
         <activity
+            android:name=".ProjectStats"
+            android:exported="false" />
+        <activity
             android:name=".RequestProject"
             android:exported="false" />
         <activity

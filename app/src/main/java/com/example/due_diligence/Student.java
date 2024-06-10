@@ -1,20 +1,26 @@
 package com.example.due_diligence;
 
-public class Student {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+public class Student implements Serializable {
     String name;
     String email;
     String password;
-    Integer numberOfNoti;
-    Projects projects;
-    Notification notification;
-    Request request;
+    List<Projects> projects;
+    List<Notification> notification;
+    List<Request> request;
 
+    public Student() {
+    }
 
-    public Student(String name, String email, String password, Integer numberOfNoti, Projects projects, Notification notification, Request request) {
+    public Student(String name, String email, String password, List<Projects> projects, List<Notification> notification, List<Request> request) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.numberOfNoti = numberOfNoti;
         this.projects = projects;
         this.notification = notification;
         this.request = request;
@@ -44,35 +50,27 @@ public class Student {
         this.password = password;
     }
 
-    public Integer getNumberOfNoti() {
-        return numberOfNoti;
-    }
-
-    public void setNumberOfNoti(Integer numberOfNoti) {
-        this.numberOfNoti = numberOfNoti;
-    }
-
-    public Projects getProjects() {
+    public List<Projects> getProjects() {
         return projects;
     }
 
-    public void setProjects(Projects projects) {
+    public void setProjects(List<Projects> projects) {
         this.projects = projects;
     }
 
-    public Notification getNotifications() {
+    public List<Notification> getNotifications() {
         return notification;
     }
 
-    public void setNotifications(Notification notifications) {
-        this.notification = notification;
+    public void setNotifications(List<Notification> notifications) {
+        this.notification = notifications;
     }
 
-    public Request getRequest() {
+    public List<Request> getRequest() {
         return request;
     }
 
-    public void setRequest(Request request) {
+    public void setRequest(List<Request> request) {
         this.request = request;
     }
 }

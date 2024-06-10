@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.Serializable;
@@ -23,7 +24,6 @@ public class HomePage extends AppCompatActivity {
     List<Projects> projects;
 
     TextView welcomenametxt, notification;
-    String userEmail;
     Firebase_Database database;
 
     @SuppressLint("MissingInflatedId")
@@ -33,36 +33,25 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         Intent intent = getIntent();
-        userEmail = intent.getStringExtra("email");
+        student = (Student) intent.getSerializableExtra("student");
 
+        Log.d("TAG", "Login" + student.getName());
         database = new Firebase_Database();
 
         welcomenametxt = findViewById(R.id.welcomenametxt);
         notification = findViewById(R.id.notificationtxt);
         recyclerView = findViewById(R.id.projectrecycler);
 
-        getUserDetails(userEmail);
+        setDetails();
     }
 
-    private void getUserDetails(String userEmail) {
-        database.getStudentDetails(userEmail, new Firebase_Database.StudentCallback() {
-            @Override
-            public void onStudentResult(Student studentResult) {
-                student = studentResult;
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        setDetails();
-                    }
-                });
-            }
-        });
-    }
+
 
     private void setDetails() {
         if (student != null) {
-            welcomenametxt.setText(student.getName());
-            notification.setText(student.getNumberOfNoti().toString());
+            welcomenametxt.setText(student.getName().toString());
+            Log.d("TAGS", "dsdsds" + student.getName());
+            notification.setText(student.notification.size() + " Notifications");
 
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(layoutManager);
@@ -71,6 +60,16 @@ public class HomePage extends AppCompatActivity {
             projects = (List<Projects>) student.getProjects();
             adapter = new AdapterHomeProjects(this, projects);
             recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+
+            adapter.setOnItemClickListener(new AdapterHomeProjects.OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    Intent intent = new Intent(HomePage.this, ProjectStats.class);
+                    intent.putExtra("project", projects.get(position));
+                    startActivity(intent);
+                }
+            });
         }
     }
 

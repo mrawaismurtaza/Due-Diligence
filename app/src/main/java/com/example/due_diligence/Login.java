@@ -4,13 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.Serializable;
 
 public class Login extends AppCompatActivity {
 
     EditText email, password;
     Firebase_Database database;
+    Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +37,16 @@ public class Login extends AppCompatActivity {
             email.setError("Please fill this field");
             password.setError("Please fill this field");
         } else {
-            database.loginUser(emailtxt, passwordtxt, new Firebase_Database.LoginCallback() {
+            database.loginUser(emailtxt, passwordtxt, view, new Firebase_Database.LoginCallback() {
                 @Override
-                public void onLoginResult(boolean success) {
-                    if (success) {
+                public void onLoginResult(Student student1) {
+                    Log.d("TAG", "Login" + student1.getName());
+                    student = student1;
+
+                    Log.d("TAG", "Login" + student1.getName());
                         Intent intent = new Intent(Login.this, HomePage.class);
-                        intent.putExtra("email", emailtxt);
+                        intent.putExtra("student", student);
                         startActivity(intent);
-                    } else {
-                        email.setError("Invalid email or password");
-                        password.setError("Invalid email or password");
-                    }
                 }
             });
         }

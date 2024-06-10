@@ -1,20 +1,21 @@
 package com.example.due_diligence;
 
-public class Teacher {
+import java.io.Serializable;
+import java.util.List;
+
+public class Teacher implements Serializable {
     String name;
     String email;
     String password;
-    Integer numberOfNoti;
-    Projects projects;
-    Notification notification;
-    Request request;
+    List<Projects> projects;
+    List<Notification> notification;
+    List<Request> request;
 
 
-    public Teacher(String name, String email, String password, Integer numberOfNoti, Projects projects, Notification notification, Request request) {
+    public Teacher(String name, String email, String password, List<Projects> projects, List<Notification> notification, List<Request> request) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.numberOfNoti = numberOfNoti;
         this.projects = projects;
         this.notification = notification;
         this.request = request;
@@ -45,35 +46,27 @@ public class Teacher {
         this.password = password;
     }
 
-    public Integer getNumberOfNoti() {
-        return numberOfNoti;
-    }
-
-    public void setNumberOfNoti(Integer numberOfNoti) {
-        this.numberOfNoti = numberOfNoti;
-    }
-
-    public Projects getProjects() {
+    public List<Projects> getProjects() {
         return projects;
     }
 
-    public void setProjects(Projects projects) {
+    public void setProjects(List<Projects> projects) {
         this.projects = projects;
     }
 
-    public Notification getNotifications() {
+    public List<Notification> getNotifications() {
         return notification;
     }
 
-    public void setNotifications(Notification notifications) {
+    public void setNotifications(List<Notification> notifications) {
         this.notification = notification;
     }
 
-    public Request getRequests() {
+    public List<Request> getRequests() {
         return request;
     }
 
-    public void setRequests(Request request) {
+    public void setRequests(List<Request> request) {
         this.request = request;
     }
 }

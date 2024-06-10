@@ -54,7 +54,7 @@ public class Signup extends AppCompatActivity {
             return;
         }
 
-        database.signupUser(emailtxt, passwordtxt, nametxt, role, String.valueOf(R.drawable.profile_icon), view, new Firebase_Database.SignupCallback() {
+        database.signupUser(emailtxt, passwordtxt, nametxt, view, new Firebase_Database.SignupCallback() {
             @Override
             public void onSignupResult(boolean success) {
                 if (success) {

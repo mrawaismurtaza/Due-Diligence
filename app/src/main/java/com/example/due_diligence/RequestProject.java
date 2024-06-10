@@ -21,16 +21,15 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RequestProject extends AppCompatActivity {
 
     private static final int PICK_FILE_REQUEST = 1;
     EditText TeacherEmail, memberEmail, projectName;
     Firebase_Database database;
     Student student;
-
-
-
-
     private Uri fileUri;
 
     @Override
@@ -71,13 +70,20 @@ public class RequestProject extends AppCompatActivity {
     }
 
     public void Sent_Propsal(View view) {
-        database.getTeacher(TeacherEmail.getText().toString() , new Firebase_Database.SingleTeacherCallback() {
-            @Override
-            public void onTeacherResult(Teacher teacher) {
-                Request request = new Request(student.getName(), student.getEmail());
-                teacher.setRequests(request);
-            }
-        });
+//        database.getTeacher(TeacherEmail.getText().toString() , new Firebase_Database.SingleTeacherCallback() {
+//            @Override
+//            public void onTeacherResult(Teacher teacher) {
+//                List<Projects> projects = new ArrayList<>();
+//                List<String> tasks = new ArrayList<>();
+//                tasks.add("Add some Funtionality");
+//                projects.add(new Projects(projectName.getText().toString(), memberEmail.getText().toString(), teacher.getName().toString(), tasks , 0, R.drawable.profile_icon));
+//                student.setProjects(projects);
+//                List<Request> requests = new ArrayList<>();
+//                requests.add( new Request(projectName.getText().toString(), memberEmail.getText().toString()));
+//                teacher.setRequests(requests);
+//                database.updateTeacher(teacher);
+//            }
+//        });
     }
 
 }

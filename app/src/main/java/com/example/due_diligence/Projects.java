@@ -1,22 +1,44 @@
 package com.example.due_diligence;
 
-public class Projects {
-    String name;
-    String[] members;
-    String Supervisor;
-    String[] tasks;
-    Integer noOfSubmissions;
-    int image;
+import java.io.Serializable;
+import java.util.List;
 
-    public Projects(String name, String[] members, String supervisor, String[] tasks, Integer noOfSubmissions, int image) {
+public class Projects implements Serializable {
+    private String image;
+    private String member;
+    private String name;
+    private int numberOfSubmissions;
+    private String supervisor;
+    private List<Tasks> tasks;
+
+    public Projects() {}
+
+    public Projects(String image, String member, String name, int numberOfSubmissions, String supervisor, List<Tasks> tasks) {
+        this.image = image;
+        this.member = member;
         this.name = name;
-        this.members = members;
-        Supervisor = supervisor;
+        this.numberOfSubmissions = numberOfSubmissions;
+        this.supervisor = supervisor;
         this.tasks = tasks;
-        this.noOfSubmissions = noOfSubmissions;
+    }
+
+
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
         this.image = image;
     }
 
+    public String getMember() {
+        return member;
+    }
+
+    public void setMember(String member) {
+        this.member = member;
+    }
 
     public String getName() {
         return name;
@@ -26,43 +48,27 @@ public class Projects {
         this.name = name;
     }
 
-    public String[] getMembers() {
-        return members;
+    public int getNumberOfSubmissions() {
+        return numberOfSubmissions;
     }
 
-    public void setMembers(String[] members) {
-        this.members = members;
+    public void setNumberOfSubmissions(int numberOfSubmissions) {
+        this.numberOfSubmissions = numberOfSubmissions;
     }
 
     public String getSupervisor() {
-        return Supervisor;
+        return supervisor;
     }
 
     public void setSupervisor(String supervisor) {
-        Supervisor = supervisor;
+        this.supervisor = supervisor;
     }
 
-    public String[] getTasks() {
+    public List<Tasks> getTasks() {
         return tasks;
     }
 
-    public void setTasks(String[] tasks) {
+    public void setTasks(List<Tasks> tasks) {
         this.tasks = tasks;
-    }
-
-    public Integer getNoOfSubmissions() {
-        return noOfSubmissions;
-    }
-
-    public void setNoOfSubmissions(Integer noOfSubmissions) {
-        this.noOfSubmissions = noOfSubmissions;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
     }
 }
